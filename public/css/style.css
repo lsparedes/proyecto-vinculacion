@@ -1,0 +1,415 @@
+:root {
+    --color-rojo-ucsc: #D12421;
+    --color-gris-ucsc: #646567;
+    --color-blanco: #FFFFFF;
+    --color-negro: #222222;
+    --color-fondo-claro: #f8f9fa;
+    --font-titulos: 'Ubuntu', sans-serif;
+    --font-texto: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-texto);
+    line-height: 1.6;
+    color: var(--color-negro);
+    background-color: var(--color-fondo-claro);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-rojo-ucsc);
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-titulos);
+    font-weight: 700;
+}
+
+h1 { font-size: 2.8rem; }
+
+h2 { 
+    font-size: 2.2rem; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    color: var(--color-rojo-ucsc);
+}
+
+h3 { font-size: 1.5rem; color: var(--color-rojo-ucsc); }
+
+.site-header {
+    background: var(--color-blanco); 
+    color: var(--color-negro);
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+}
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav ul li a {
+    color: var(--color-negro);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.main-nav ul li a:hover {
+    text-decoration: underline;
+    color: var(--color-rojo-ucsc);
+}
+
+.hero {
+    height: 300px;
+    background: var(--color-gris-ucsc) url("https://via.placeholder.com/1920x300/646567/FFFFFF?text=Campus+UCSC") center / cover no-repeat; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+.hero-text {
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+.hero-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.hero-text p {
+    font-size: 1.2em;
+}
+
+.noticias {
+    padding: 50px 20px;
+    background: white;
+    text-align: center;
+}
+.noticias h2 {
+    margin-bottom: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.2em;
+    text-transform: uppercase;
+}
+
+.cards, .sedes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+.card, .sede-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+    display: flex;
+    flex-direction: column;
+}
+.card img, .sede-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.card h3, .sede-card h3 {
+    padding: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--color-rojo-ucsc);
+    font-size: 1.2em; 
+}
+.card p, .sede-card p {
+    padding: 0 15px 15px 15px;
+    flex-grow: 1;
+    color: var(--color-negro);
+    font-size: 0.9em; 
+}
+
+.product-button, .boton-sede { 
+    background-color: var(--color-rojo-ucsc);
+    color: #ffffff;             
+    text-decoration: none;
+    padding: 10px 15px; 
+    border-radius: 5px;        
+    font-weight: 700;
+    text-align: center;
+    display: block;
+    margin: 0 15px 15px 15px;
+    transition: background-color 0.3s ease;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9em;
+}
+.product-button:hover, .boton-sede:hover {
+    background-color: #a91c1a;
+    color: #ffffff;
+    opacity: 1;
+}
+
+.galeria-3d {
+    background: #f4f6f8; 
+    padding: 50px 20px;
+}
+.galeria-3d h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+}
+.models-grid {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    gap: 30px;             
+}
+.product-card {
+    display: flex;
+    background: #ffffff;
+    border-radius: 12px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); 
+    max-width: 900px;
+    width: 100%;
+    overflow: hidden; 
+}
+.product-model {
+    flex-basis: 50%; 
+    min-height: 400px;
+    background: #fafafa; 
+}
+.product-model model-viewer {
+    width: 100%;
+    height: 100%;
+    min-height: 400px; 
+}
+.product-info {
+    flex-basis: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+.product-info h3 {
+    font-size: 1.8em;
+    color: var(--color-gris-ucsc); 
+    font-weight: 700;
+    line-height: 1.3;
+    font-family: 'Ubuntu', sans-serif;
+}
+.product-info h3 .highlight {
+    color: var(--color-rojo-ucsc); 
+    display: block;   
+}
+.product-info p {
+    font-size: 1em;
+    color: #555;      
+    margin: 20px 0;   
+}
+
+.ucsc-footer {
+    background-color: var(--color-gris-ucsc);
+    color: #ffffff;
+    line-height: 1.7;
+}
+.footer-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.footer-column {
+    min-width: 0; 
+}
+
+#footer-identidad {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.footer-logo {
+    font-family: 'Ubuntu', sans-serif; 
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.acreditacion {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.acreditacion-areas {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.footer-column h4 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1em;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.footer-bottom-bar {
+    background-color: rgba(0, 0, 0, 0.2); 
+    padding: 25px 20px;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social a {
+    color: var(--color-gris-ucsc); 
+    background-color: #ffffff; 
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+    opacity: 1; 
+}
+
+.footer-copyright {
+    font-size: 0.85em;
+    text-align: right;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .main-nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .noticias .cards, .sedes-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    .product-card {
+        flex-direction: column; 
+    }
+    .product-model,
+    .product-info {
+        flex-basis: 100%;
+    }
+    .product-info {
+        padding: 30px;
+        text-align: center;
+        align-items: center; 
+    }
+    .product-info h3 .highlight {
+        font-size: 1.2em; 
+    }
+    .footer-bottom-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+    .footer-copyright {
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+}

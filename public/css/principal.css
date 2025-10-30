@@ -1,0 +1,318 @@
+:root {
+    --color-rojo-ucsc: #D12421;
+    --color-gris-ucsc: #646567;
+    --color-blanco: #FFFFFF;
+    --color-negro: #222222;
+    --color-fondo-claro: #f8f9fa;
+    --font-titulos: 'Ubuntu', sans-serif;
+    --font-texto: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-texto);
+    line-height: 1.6;
+    color: var(--color-negro);
+    background-color: var(--color-fondo-claro);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-rojo-ucsc);
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-titulos);
+    font-weight: 700;
+}
+
+h1 { font-size: 2.8rem; }
+
+h2 { 
+    font-size: 2.2rem; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    color: var(--color-rojo-ucsc);
+}
+
+h3 { font-size: 1.5rem; color: var(--color-rojo-ucsc); }
+
+.header-institucional {
+    background-color: var(--color-blanco);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    display: block;
+}
+
+.logo img {
+    height: 40px;
+    width: auto; 
+    display: block; 
+}
+
+.navegacion-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navegacion-principal a {
+    color: var(--color-gris-ucsc);
+    font-family: var(--font-texto);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.navegacion-principal a:hover {
+    border-bottom-color: var(--color-rojo-ucsc);
+    opacity: 1;
+}
+
+.hero {
+    background-color: var(--color-gris-ucsc);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 100px 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x600/646567/FFFFFF?text=Campus+UCSC');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    margin-bottom: 15px;
+}
+
+.seccion-sedes {
+    padding: 60px 0;
+}
+
+.subtitulo-sedes {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.sedes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.sede-card {
+    background-color: var(--color-blanco);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden; 
+    text-decoration: none;
+    color: var(--color-negro);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sede-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.sede-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.sede-card h3 {
+    padding: 20px 20px 10px 20px;
+}
+
+.sede-card p {
+    padding: 0 20px 20px 20px;
+    flex-grow: 1; 
+}
+
+.boton-sede {
+    display: block;
+    background-color: var(--color-rojo-ucsc);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 12px 20px;
+    font-weight: 700;
+    font-family: var(--font-texto);
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.ucsc-footer {
+  background-color: #646567;
+  color: #ffffff;
+  line-height: 1.7;
+}
+
+.footer-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.footer-column {
+  min-width: 0; 
+}
+
+#footer-identidad {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.footer-logo {
+  font-family: 'Ubuntu', sans-serif; 
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.acreditacion {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.acreditacion-areas {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.footer-column h4 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.1em;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-bottom-bar {
+  background-color: rgba(0, 0, 0, 0.2); 
+  padding: 25px 20px;
+}
+
+.footer-bottom-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 20px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social a {
+  color: #646567; 
+  background-color: #ffffff; 
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.1);
+}
+
+.footer-copyright {
+  font-size: 0.85em;
+  text-align: right;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column; 
+    text-align: center;
+  }
+  
+  .footer-copyright {
+    text-align: center;
+    margin-top: 15px;
+  }
+}
