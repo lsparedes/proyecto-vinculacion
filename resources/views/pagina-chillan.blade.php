@@ -19,8 +19,8 @@
       <nav class="main-nav">
         <ul>
           <li><a href="{{ url('/principal') }}">Inicio</a></li>
-          <li><a href="#">cede talcahuano</a></li>
-          <li><a href="#">cede los angeles</a></li>
+          <li><a href="#">Sede Talcahuano</a></li>
+          <li><a href="#">Sede Los Ángeles</a></li>
         </ul>
       </nav>
     </div>
