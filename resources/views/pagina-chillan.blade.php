@@ -28,7 +28,7 @@
 
   <section class="hero">
     <div class="hero-text">
-      <h1>proyecto de vinculazion de realidad aumentada</h1>
+      <h1>Proyecto de vinculación de Realidad Aumentada (RA)</h1>
       <p>Explora nuestra galería 3D institucional</p>
     </div>
   </section>
