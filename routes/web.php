@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EsqueletoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,4 @@ Route::get('/modelo-goldenskull', function () {
 Route::get('/modelo-estefano', function () {
     return view('modelo-estefano');
 });
+Route::get('/visor-esqueleto', [EsqueletoController::class, 'mostrarEsqueleto']);

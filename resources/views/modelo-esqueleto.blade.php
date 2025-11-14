@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esqueleto</title>
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/principal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/esqueleto.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-orbit-controls@1.3.1/dist/aframe-orbit-controls.min.js"></script>
@@ -44,7 +45,7 @@
             <a-entity light="type: directional; intensity: 0.6" position="1 1 1"></a-entity>
             <!--Modelo-->
             <a-entity id="esqueleto"
-            gltf-model="{{ asset('modelos/huesos.glb') }}"
+            gltf-model="{{ asset('esqueleto/huesos.glb') }}"
             scale="1 1 1" position="0 -3 -10"></a-entity>
             <!--zoom-->
             <a-camera id="zoom" 
@@ -141,7 +142,10 @@
     </div>
   </div>
 </footer>
+<script>
+    const huesosDesdeLaravel = @json($huesosData);
+</script>
 
-    <script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>
