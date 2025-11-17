@@ -4,14 +4,19 @@ let huesoSeleccionado = null;
 document.addEventListener("DOMContentLoaded", () => {
   const escena = document.querySelector("a-scene");
   const esqueleto = document.querySelector("#esqueleto");
-  // ¡¡AÑADIMOS ESTA LÍNEA!!
   const visor = document.querySelector("#visor"); 
+
+  // Elementos para el zoom manual
+  const btnIn = document.getElementById("btn-zoom-in");
+  const btnOut = document.getElementById("btn-zoom-out");
+  const camaraEl = document.querySelector("#zoom");
 
   escena.addEventListener("loaded", () => {
     const canvas = escena.renderer.domElement;
 
     canvas.addEventListener("contextmenu", (e) => e.preventDefault());
 
+    // Prevenir el scroll de la página cuando se usa la rueda sobre el visor
     visor.addEventListener("wheel", (e) => e.preventDefault(), { passive: false });
 
     esqueleto.addEventListener("model-loaded", () => {
@@ -26,9 +31,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     canvas.addEventListener("pointerdown", (event) => {
-      if (event.button !== 0) return;
+      if (event.button !== 0) return; // Solo clic izquierdo
       seleccionarHueso(event, escena, esqueleto, canvas);
     });
+
+    // --- LÓGICA DE BOTONES DE ZOOM ---
+    if(btnIn && btnOut && camaraEl) {
+        // Configuración igual a la de tu orbit-controls en HTML
+        const targetPosition = new THREE.Vector3(0, -3, -10); 
+        const step = 1.5; // Cantidad de zoom por clic
+        const minDst = 2; 
+        const maxDst = 20; 
+
+        const realizarZoom = (direccion) => {
+            const camaraObj = camaraEl.object3D;
+            
+            // Calcular distancia actual
+            const currentDistance = camaraObj.position.distanceTo(targetPosition);
+            
+            // Vector dirección desde el objetivo hacia la cámara
+            const directionVector = new THREE.Vector3()
+                .subVectors(camaraObj.position, targetPosition)
+                .normalize();
+
+            if (direccion === 'in' && currentDistance > minDst) {
+                // Acercar: restamos el vector dirección
+                camaraObj.position.addScaledVector(directionVector, -step);
+            } 
+            else if (direccion === 'out' && currentDistance < maxDst) {
+                // Alejar: sumamos el vector dirección
+                camaraObj.position.addScaledVector(directionVector, step);
+            }
+        };
+
+        btnIn.addEventListener("click", (e) => {
+            e.preventDefault();
+            realizarZoom('in');
+        });
+
+        btnOut.addEventListener("click", (e) => {
+            e.preventDefault();
+            realizarZoom('out');
+        });
+    }
   });
 });
 
