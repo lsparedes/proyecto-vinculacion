@@ -13,15 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
+    return view('principal');
+});
+
+Route::get('/thno', function () {
+    return view('pagina-thno');
+});
+
+Route::get('/chillan', function () {
     return view('pagina-chillan');
 });
-
-Route::get('/principal', function () { 
-    return view('principal'); 
-});
-
-
 Route::get('/modelo-auto', function () {
     return view('modelo-auto');
 });
@@ -33,3 +36,4 @@ Route::get('/modelo-goldenskull', function () {
 Route::get('/modelo-estefano', function () {
     return view('modelo-estefano');
 });
+
