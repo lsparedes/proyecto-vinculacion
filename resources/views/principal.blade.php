@@ -37,7 +37,7 @@
     <main>
         <section class="hero" id="inicio">
             <div class="hero-content">
-                <h1>proyecto de vinculazion de realidad aumentada</h1>
+                <h1>proyecto de vinculacion de realidad aumentada</h1>
                 <p>proyecto intercede desarrollado por alumnos de la carrera de Ingeniería en ejecucion en ejecucion en iformatica</p>
             </div>
         </section>
