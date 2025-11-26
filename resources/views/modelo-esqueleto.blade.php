@@ -43,8 +43,9 @@
 
             <button id="btn-zoom-in" type="button" title="Acercar">+</button>
             <button id="btn-zoom-out" type="button" title="Alejar">-</button>
+            <button id="btn-reset" title="Restablecer vista">⟲</button>
         </div>
-
+        
         <a-scene embedded background="color #fff">
 
             <a-entity light="type: ambient; intensity: 1"></a-entity>

@@ -1,8 +1,9 @@
 #visor {
-    width: 100%;
-    height: 500px;
+    width: 65%;
+    height: 700px;
     border: 2px solid #D12421;
     margin-bottom: 20px;
+    margin: 0 auto 20px auto;
     /* Importante: Para que los botones se posicionen respecto a este cuadro */
     position: relative; 
 }
