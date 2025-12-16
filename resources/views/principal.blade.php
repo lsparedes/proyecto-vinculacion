@@ -147,6 +147,7 @@
                 <div class="footer-copyright">
                     <p>Campus San Andrés. Alonso de Ribera 2850, Concepción, Chile.</p>
                     <p>© 2025 Universidad Católica de la Santísima Concepción.</p>
+                    <p> Alumno en practica a cargo de esta pagina: Felipe Alejandro Espinosa Barrera, Gonzalo Sebastian Zuñiga</p>
                 </div>
             </div>
         </div>

@@ -7,7 +7,15 @@
   
   <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
   
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+  <style> 
+    .action-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+    .btn-ar { background-color: #e63946; color: white; }
+    .instrucciones-globales { background-color: #f4f4f4; padding: 20px; margin: 40px auto; border-radius: 10px; max-width: 800px; text-align: center; border: 1px solid #ddd; }
+  </style>
 </head>
 <body>
 
@@ -18,9 +26,10 @@
       </div>
       <nav class="main-nav">
         <ul>
-          <li><a href="{{ url('/principal') }}">Inicio</a></li>
+          <li><a href="{{ url('principal') }}">Inicio</a></li>
           <li><a href="#">Sede Talcahuano</a></li>
           <li><a href="#">Sede Los Ángeles</a></li>
+          <li><a href="#">Sede de Cañete</a></li>
         </ul>
       </nav>
     </div>
@@ -28,27 +37,27 @@
 
   <section class="hero">
     <div class="hero-text">
-      <h1>Proyecto de vinculación de Realidad Aumentada (RA)</h1>
+      <h1>Proyecto de vinculación de Realidad Aumentada</h1>
       <p>Explora nuestra galería 3D institucional</p>
     </div>
   </section>
 
   <section class="noticias">
-    <h2>proyectos de las demas cedes</h2>
+    <h2>Proyectos de las demas sedes</h2>
     <div class="cards">
       <div class="card">
-        <img src="{{ asset('imagenes/cede-talcahuano.png') }}" alt="Sede Talcahuano">
-        <h3>cede de talcahuano</h3>
+        <img src="{{ asset('imagenes/cede-talcahuano.png') }}" alt="">
+        <h3>Sede de Talcahuano</h3>
         <a href="#" class="product-button">Ver proyectos</a>
       </div>
       <div class="card">
-        <img src="{{ asset('imagenes/cede-angeles.png') }}" alt="Sede Los Ángeles">
-        <h3>cede los angeles</h3>
+        <img src="{{ asset('imagenes/cede-angeles.png') }}" alt="">
+        <h3>Sede Los Ángeles</h3>
         <a href="#" class="product-button">Ver proyectos</a>
       </div>
       <div class="card">
-        <img src="{{ asset('imagenes/cede-cañete.png') }}" alt="Sede Los Ángeles"> 
-        <h3>cede los Cede de cañete</h3>
+        <img src="{{ asset('imagenes/cede-cañete.png') }}" alt="">
+        <h3>Sede de Cañete</h3>
         <a href="#" class="product-button">Ver proyectos</a>
       </div>
     </div>
@@ -60,38 +69,65 @@
 
       <div class="product-card">
         <div class="product-model">
-          <model-viewer src="{{ asset('stefano/scene.gltf') }}" camera-controls auto-rotate></model-viewer>
+          <model-viewer src="{{ asset('felipe (2).glb') }}" camera-controls auto-rotate></model-viewer>
         </div>
         <div class="product-info">
-          <h3>Modelo de Diseño <span class="highlight">3D Avanzado</span></h3>
-          <p>Explora los detalles intrincados y la ingeniería detrás de nuestro último prototipo. Visualiza el modelo interactivo con todas sus características.</p>
-          <a href="{{ url('modelo-estefano') }}" class="product-button">Ver Modelo</a>
+          <h3>Modelo <span class="highlight">exterior</span></h3>
+          <p>el modelo 3d de la sede por fuera, sin el complejo interno.</p>
+          
+          <div class="action-buttons">
+              <a href="{{ url('modelo-completo') }}" class="product-button">Ver Web 3D</a>
+              <a href="{{ url('ar-modelo-1') }}" class="product-button btn-ar"> Ver en AR</a>
+          </div>
         </div>
       </div>
 
       <div class="product-card">
         <div class="product-model">
-          <model-viewer src="{{ asset('goldenskull/scene.gltf') }}" camera-controls auto-rotate></model-viewer>
+          <model-viewer src="{{ asset('Primer pisovf.glb') }}" camera-controls auto-rotate></model-viewer>
         </div>
         <div class="product-info">
-          <h3>Artefacto <span class="highlight">Dorado</span></h3>
-          <p>Un artefacto antiguo con detalles finos. Rota el modelo para inspeccionar cada ángulo de esta reliquia digital.</p>
-          <a href="{{ url('/modelo-goldenskull') }}" class="product-button">Ver Modelo</a>
+          <h3>Primer<span class="highlight">Piso</span></h3>
+          <p>el modelo 3d del primer pido de la sede de chillan de la ucsc.</p>
+          
+          <div class="action-buttons">
+              <a href="{{ url('primer-piso') }}" class="product-button">Ver Web 3D</a>
+              <a href="{{ url('ar-modelo-2') }}" class="product-button btn-ar"> Ver en AR</a>
+          </div>
         </div>
       </div>
 
       <div class="product-card">
         <div class="product-model">
-          <model-viewer src="{{ asset('auto/scene.gltf') }}" camera-controls auto-rotate></model-viewer>
+          <model-viewer src="{{ asset('segundo piso vf.glb') }}" camera-controls auto-rotate></model-viewer>
         </div>
         <div class="product-info">
-          <h3>Vehículo <span class="highlight">Deportivo</span></h3>
-          <p>El diseño conceptual de nuestro último vehículo. Haz clic para ver el interior y los componentes del motor.</p>
-          <a href="{{ url('/modelo-auto') }}" class="product-button">Ver Modelo</a>
+          <h3>segundo <span class="highlight">piso</span></h3>
+          <p>modelo del segundo piso en creacion por ahora.</p>
+          
+          <div class="action-buttons">
+              <a href="{{ url('segundo-piso') }}" class="product-button">Ver Web 3D</a>
+              <a href="#" class="{{ url('ar-modelo-3') }}" class="product-button btn-ar"> Ver en AR</a>
+          </div>
         </div>
       </div>
 
     </div>
+  </section>
+
+  <section class="instrucciones-globales">
+    <h3>¿Cómo funciona la Realidad Aumentada?</h3>
+    <p>Para ver los modelos en tu entorno, sigue estos pasos:</p>
+    <ol style="text-align: left; display: inline-block;">
+        <li>Haz clic en el botón <strong>" Ver en AR"</strong> de la tarjeta que quieras ver.</li>
+        <li>Si estás en PC, enfoca con tu celular el <strong>Marcador HIRO</strong> de abajo.</li>
+        <li>Si estás en celular, necesitarás tener este marcador impreso o en otra pantalla.</li>
+    </ol>
+    <br><br>
+    <p><strong>Escanea este marcador con la cámara AR:</strong></p>
+    <center>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Hiro_marker_ARjs.png" alt="Marcador HIRO" width="200" style="border: 4px solid #333; border-radius: 5px;">
+    </center>
   </section>
 
  <footer class="ucsc-footer" id="footer">
@@ -160,6 +196,7 @@
             <div class="footer-copyright">
                 <p>Campus San Andrés. Alonso de Ribera 2850, Concepción, Chile.</p>
                 <p>© 2025 Universidad Católica de la Santísima Concepción.</p>
+                <p> Alumno en practica a cargo de esta pagina: Felipe Alejandro Espinosa Barrera.</p>
             </div>
         </div>
     </div>

@@ -22,14 +22,25 @@ Route::get('/principal', function () {
 });
 
 
-Route::get('/modelo-auto', function () {
-    return view('modelo-auto');
+Route::get('/modelo-completo', function () {
+    return view('modelo-completo');
 });
 
-Route::get('/modelo-goldenskull', function () {
-    return view('modelo-goldenskull');
+Route::get('/primer-piso', function () {
+    return view('primer-piso');
 });
 
-Route::get('/modelo-estefano', function () {
-    return view('modelo-estefano');
+Route::get('/segundo-piso', function () {
+    return view('segundo-piso');
+});
+
+Route::get('/ar-modelo-1', function () {
+    return view('ar_view');
+});
+
+Route::get('/ar-modelo-2', function () {
+    return view('ar_view2');
+});
+Route::get('/ar-modelo-3', function () {
+    return view('ar_view3');
 });
